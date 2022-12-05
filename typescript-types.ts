@@ -121,3 +121,29 @@ function displayNations(World: Nations) {
   console.log(World.city.toUpperCase());
   console.log(World.population * 10);
 }
+
+displayNations({
+  city: "Trento",
+  district: "Madonna Bianca",
+  population: 10.0,
+});
+// in this case once we instanciating the obj if we want to invoke the function and assign to it
+//different values for its properties, we need to add each one of its props, with their respective types
+
+//defining obj with tpye aliases
+type comics = {
+  title: string;
+  author: string;
+  releaseYear: number;
+};
+const ComicsReleases: comics = {
+  title: "One Piece",
+  author: "Eichiro Oda",
+  releaseYear: 1997,
+};
+
+function showComics(ComicsReleases: comics) {
+  console.log(ComicsReleases.title.toUpperCase());
+  console.log(ComicsReleases.releaseYear);
+}
+showComics(ComicsReleases);

@@ -11,7 +11,7 @@ isBlackBelt = true;
 //automatically inferr which is the type of that variable
 //in our case for example character will be automatically set to a string type
 var circ = function (diameter) {
-    return diameter * Math.PI;
+  return diameter * Math.PI;
 };
 console.log(circ(4));
 //Any type
@@ -20,14 +20,14 @@ var country = { name: "Italy" };
 country.code = "IT";
 //unknown type
 function outputLength(value) {
-    if (typeof value === "string") {
-        console.log(value.length);
-    }
+  if (typeof value === "string") {
+    console.log(value.length);
+  }
 }
 outputLength("a string");
 //never types
 function throwFormattedError(message) {
-    throw new Error("Something went wrong ".concat(message));
+  throw new Error("Something went wrong ".concat(message));
 }
 //array types
 var names = ["Luigi", "Mario", "Yoshi"];
@@ -46,16 +46,16 @@ mixed.push(true);
 mixed[0] = 3; // the first string type value ken is now overwitten and changed to 3
 //objects
 var samurai = {
-    name: "Goro",
-    role: "Shinsegumi",
-    age: 30
+  name: "Goro",
+  role: "Shinsegumi",
+  age: 30,
 };
 samurai.age = 40;
 samurai.name = "Hannya";
 samurai = {
-    name: "Kenshin",
-    role: "Shogun",
-    age: 27
+  name: "Kenshin",
+  role: "Shogun",
+  age: 27,
 };
 //in this case if i want to modify the whole samurai obj
 // i need to recall each prop of that object
@@ -64,35 +64,50 @@ samurai = {
 //it has to match the same props with their same types
 //objects example
 var cities = {
-    city: "TN",
-    population: 5135300
+  city: "TN",
+  population: 5135300,
 };
 function displayCitiesDetails(cities) {
-    console.log(cities.city.toUpperCase());
-    console.log(cities.population * 3);
+  console.log(cities.city.toUpperCase());
+  console.log(cities.population * 3);
 }
 displayCitiesDetails(cities);
 // in this case we could use in this function only the existing properties of our country object
 //Another way of defining the object types
 var citiesOfItaly = {
-    capital: "Rome",
-    name: "Italy",
-    inhabitants: 1000000
+  capital: "Rome",
+  name: "Italy",
+  inhabitants: 1000000,
 };
 //in this case we specified the properties of each property of our obj
 //it's not strictyl necessary since typescript will inferr the type accordingly to the value we passed to it
 //but that helps to get a cleaner code
 function displayCitiesOfItalyDetails(citiesOfItaly) {
-    console.log(citiesOfItaly.name.toUpperCase());
-    console.log(citiesOfItaly.inhabitants * 3);
+  console.log(citiesOfItaly.name.toUpperCase());
+  console.log(citiesOfItaly.inhabitants * 3);
 }
 displayCitiesOfItalyDetails(citiesOfItaly);
 var World = {
-    city: "Genova",
-    district: "Civita vecchia",
-    population: 3356890
+  city: "Genova",
+  district: "Civita vecchia",
+  population: 3356890,
 };
 function displayNations(World) {
-    console.log(World.city.toUpperCase());
-    console.log(World.population * 10);
+  console.log(World.city.toUpperCase());
+  console.log(World.population * 10);
 }
+displayNations({
+  city: "Trento",
+  district: "Madonna Bianca",
+  population: 10.0,
+});
+var ComicsReleases = {
+  title: "One Piece",
+  author: "Eichiro Oda",
+  releaseYear: 1997,
+};
+function showComics(ComicsReleases) {
+  console.log(ComicsReleases.title.toUpperCase());
+  console.log(ComicsReleases.releaseYear);
+}
+showComics(ComicsReleases);
