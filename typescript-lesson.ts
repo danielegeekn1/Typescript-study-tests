@@ -112,3 +112,15 @@ let spokenLanguagesInEurope = ["Italian", "French"];
 for (let i = 0; i < spokenLanguagesInEurope.length; i++) {
   console.log(spokenLanguagesInEurope[i].toUpperCase());
 }
+//Any type
+let country: any = { name: "Italy" };
+//we've been able to change this variable type thanks to any type
+country.code = "IT";
+
+//unknown type
+function outputLength(value: unknown) {
+  if (typeof value === "string") {
+    console.log(value.length);
+  }
+}
+outputLength("a string");
