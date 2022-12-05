@@ -70,3 +70,17 @@ samurai = {
 //in this case if i want to modify the whole samurai obj
 // i need to recall each prop of that object
 //each props has to match its type, which i cannot change in this way
+
+//In this case I could not add another property either,
+//it has to match the same props with their same types
+
+//objects example
+const cities = {
+  city: "TN",
+  population: 5_135_300,
+};
+function displayCitiesDetails(cities) {
+  console.log(cities.city.toUpperCase());
+  console.log(cities.population * 3);
+}
+displayCitiesDetails(cities);
