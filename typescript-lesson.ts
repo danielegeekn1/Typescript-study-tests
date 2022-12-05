@@ -90,3 +90,25 @@ logDetails = (ninja: ninja) => {
 };
 // in this case we simply passed as argument an obj as we declared in signatures
 //but we passed to it an obj we declared outside the function
+
+//if and switch statement types
+let spokenLanguages = ["Spanish", "English"];
+if (spokenLanguages[0] !== "") {
+  console.log(spokenLanguages[0]);
+}
+
+let say = "Goodbye";
+switch (say) {
+  case "Hello":
+    console.log("Good morning");
+    break;
+  case "Goodbye":
+    console.log(`Au revoir ${say.toUpperCase()}`);
+    break;
+}
+
+//for loops in typescript
+let spokenLanguagesInEurope = ["Italian", "French"];
+for (let i = 0; i < spokenLanguagesInEurope.length; i++) {
+  console.log(spokenLanguagesInEurope[i].toUpperCase());
+}
