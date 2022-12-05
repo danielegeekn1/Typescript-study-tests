@@ -59,3 +59,34 @@ const describeCurrency = (
 };
 const description = describeCurrency("Spain", "Euro", "€");
 console.log(description);
+
+//function signature
+//1st example
+let greet: (a: string, b: string) => void;
+//in this case this variable will be allowed to contain a function, with two parameters with string tpyes, and the retun type of the function is void
+//meaning there'll be no return from this function
+greet = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
+};
+//2nd example
+let calc: (a: number, b: number, c: string) => number;
+calc = (num1: number, num2: number, action: string) => {
+  if (action === "add") {
+    return num1 + num2;
+  } else {
+    return num1 - num2;
+  }
+};
+//3rd example
+let logDetails: (obj: { name: string; age: number }) => void;
+// logDetails = (ninja: { name: string; age: number }) => {
+//   console.log(`${ninja.name} is ${ninja.age} years old`);
+// };
+
+//4th example
+type ninja = { name: string; age: number };
+logDetails = (ninja: ninja) => {
+  console.log(`${ninja.name} is ${ninja.age} years old`);
+};
+// in this case we simply passed as argument an obj as we declared in signatures
+//but we passed to it an obj we declared outside the function
