@@ -11,6 +11,6 @@ isBlackBelt = true;
 //automatically inferr which is the type of that variable
 //in our case for example character will be automatically set to a string type
 var circ = function (diameter) {
-    return diameter * Math.PI;
+  return diameter * Math.PI;
 };
 console.log(circ(4));
