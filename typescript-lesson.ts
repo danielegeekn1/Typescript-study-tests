@@ -124,3 +124,8 @@ function outputLength(value: unknown) {
   }
 }
 outputLength("a string");
+
+//never types
+function throwFormattedError(message: string): never {
+  throw new Error(`Something went wrong ${message}`);
+}
