@@ -112,14 +112,30 @@ let spokenLanguagesInEurope = ["Italian", "French"];
 for (let i = 0; i < spokenLanguagesInEurope.length; i++) {
   console.log(spokenLanguagesInEurope[i].toUpperCase());
 }
-function someLibraryFunction(): any {
+function someLibraryFunctions(): any {
   return "a string";
 }
 //call this function
-const valueFromLibrary = someLibraryFunction() as string;
+const valueFromLibrary = someLibraryFunctions() as string;
 const stringLength = valueFromLibrary.length;
 console.log(stringLength);
 //type aliases
 type Street = string;
 //type Street is an alias
 const street: Street = "Long road to Dublin";
+
+//type aliases example with benefits
+type Point = {
+  x: number;
+  y: number;
+};
+
+// Exactly the same as the earlier example
+function printCoord(pt: Point) {
+  console.log("The coordinate's x value is " + pt.x);
+  console.log("The coordinate's y value is " + pt.y);
+}
+
+printCoord({ x: 100, y: 100 });
+
+// in this case we could use these variables we passed into our type alias as many time as want
