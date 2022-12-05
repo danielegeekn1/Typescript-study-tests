@@ -104,3 +104,20 @@ function displayCitiesOfItalyDetails(citiesOfItaly: {
   console.log(citiesOfItaly.inhabitants * 3);
 }
 displayCitiesOfItalyDetails(citiesOfItaly);
+
+//defining object with interfaces
+interface Nations {
+  city: string;
+  district: string;
+  population: number;
+}
+const World: Nations = {
+  city: "Genova",
+  district: "Civita vecchia",
+  population: 3_356_890,
+};
+
+function displayNations(World: Nations) {
+  console.log(World.city.toUpperCase());
+  console.log(World.population * 10);
+}

@@ -87,3 +87,12 @@ function displayCitiesOfItalyDetails(citiesOfItaly) {
     console.log(citiesOfItaly.inhabitants * 3);
 }
 displayCitiesOfItalyDetails(citiesOfItaly);
+var World = {
+    city: "Genova",
+    district: "Civita vecchia",
+    population: 3356890
+};
+function displayNations(World) {
+    console.log(World.city.toUpperCase());
+    console.log(World.population * 10);
+}
