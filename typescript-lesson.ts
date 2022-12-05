@@ -44,3 +44,18 @@ let isSummer = false;
 let currency: null = null;
 //undefined
 let languages: undefined = undefined;
+
+//function
+const describeCurrency = (
+  country: string,
+  currency: string,
+  currencySymbol?: string
+) => {
+  let description = `The currency of ${country} is the ${currency}`;
+  if (typeof currencySymbol === "string") {
+    description += `(${currencySymbol})`;
+  }
+  return description;
+};
+const description = describeCurrency("Spain", "Euro", "€");
+console.log(description);

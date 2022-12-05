@@ -43,3 +43,13 @@ var isSummer = false;
 var currency = null;
 //undefined
 var languages = undefined;
+//function
+var describeCurrency = function (country, currency, currencySymbol) {
+    var description = "The currency of ".concat(country, " is the ").concat(currency);
+    if (typeof currencySymbol === "string") {
+        description += "(".concat(currencySymbol, ")");
+    }
+    return description;
+};
+var description = describeCurrency("Spain", "Euro", "€");
+console.log(description);
