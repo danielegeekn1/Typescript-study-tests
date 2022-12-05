@@ -75,6 +75,7 @@ samurai = {
 //it has to match the same props with their same types
 
 //objects example
+
 const cities = {
   city: "TN",
   population: 5_135_300,
@@ -84,3 +85,22 @@ function displayCitiesDetails(cities) {
   console.log(cities.population * 3);
 }
 displayCitiesDetails(cities);
+
+// in this case we could use in this function only the existing properties of our country object
+//Another way of defining the object types
+const citiesOfItaly: { name: string; capital: string; inhabitants: number } = {
+  capital: "Rome",
+  name: "Italy",
+  inhabitants: 1_000_000,
+};
+//in this case we specified the properties of each property of our obj
+//it's not strictyl necessary since typescript will inferr the type accordingly to the value we passed to it
+//but that helps to get a cleaner code
+function displayCitiesOfItalyDetails(citiesOfItaly: {
+  name: string;
+  inhabitants: number;
+}) {
+  console.log(citiesOfItaly.name.toUpperCase());
+  console.log(citiesOfItaly.inhabitants * 3);
+}
+displayCitiesOfItalyDetails(citiesOfItaly);
