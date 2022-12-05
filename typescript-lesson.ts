@@ -112,3 +112,14 @@ let spokenLanguagesInEurope = ["Italian", "French"];
 for (let i = 0; i < spokenLanguagesInEurope.length; i++) {
   console.log(spokenLanguagesInEurope[i].toUpperCase());
 }
+function someLibraryFunction(): any {
+  return "a string";
+}
+//call this function
+const valueFromLibrary = someLibraryFunction() as string;
+const stringLength = valueFromLibrary.length;
+console.log(stringLength);
+//type aliases
+type Street = string;
+//type Street is an alias
+const street: Street = "Long road to Dublin";

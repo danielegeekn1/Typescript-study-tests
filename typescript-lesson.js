@@ -93,3 +93,15 @@ switch (say) {
     console.log("Au revoir ".concat(say.toUpperCase()));
     break;
 }
+//for loops in typescript
+var spokenLanguagesInEurope = ["Italian", "French"];
+for (var i = 0; i < spokenLanguagesInEurope.length; i++) {
+  console.log(spokenLanguagesInEurope[i].toUpperCase());
+}
+function someLibraryFunction() {
+  return "a string";
+}
+//call this function
+var valueFromLibrary = someLibraryFunction();
+var stringLength = valueFromLibrary.length;
+console.log(stringLength);
