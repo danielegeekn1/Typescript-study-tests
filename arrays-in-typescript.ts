@@ -75,3 +75,14 @@ const filterMethod = mangaAndAnimeInfo.filter((manga) => {
   return manga.releaseYear > 1994;
 });
 console.log(filterMethod);
+//for each array method
+mangaAndAnimeInfo.forEach((elem) => {
+  console.log(`The manga author who will come this year at the comic fair
+   is ${elem.author}, and He'll talk about this manga  ${elem.mangaTitle} `);
+});
+
+//map method
+const mangaInfo = mangaAndAnimeInfo.map((objElem) => {
+  return objElem.releaseYear;
+});
+console.log(mangaInfo);
