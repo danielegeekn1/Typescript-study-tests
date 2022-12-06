@@ -28,3 +28,24 @@ inVoice2.amount = 400;
 
 //since we instanciated our class, we created new variable, that'll be public and so we'll be able to
 //modify each of their values with dot notations
+console.log(inVoice1, inVoice2);
+//other class example
+class Country {
+  readonly name: string = ""; // this is what is required to set this property to be readonly, so this property my not be changed
+  code: string = "";
+  languages: string[] = [];
+  constructor(name: string, code: string) {
+    this.name = name;
+    this.code = code;
+  }
+  addLanguage(language: string) {
+    this.languages.push(language);
+  }
+}
+const Nigeria = new Country("Nigeria", "NG");
+
+Nigeria.addLanguage("Hausa");
+Nigeria.addLanguage("Igbo");
+Nigeria.addLanguage("Yoruba");
+Nigeria.addLanguage("English");
+console.log(Nigeria);
