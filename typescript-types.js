@@ -153,5 +153,21 @@ var WorlWideSpokenLanguages = {
 //unless we do not set this to be optional with the property modifier as we did above
 function logWorldWideSpokenLanguages(WorlWideSpokenLanguages) {
     console.log("The most spoken language in the world is ".concat(WorlWideSpokenLanguages.spokenLanguage, " and it's spoken in ").concat(WorlWideSpokenLanguages.nation));
+    if (typeof WorlWideSpokenLanguages.inhabitants === "number") {
+        console.log(WorlWideSpokenLanguages.inhabitants * 2);
+    }
 }
+//by adding this condition in our function, also if we still didnt' have our inhabitants props, we'll not receive an error
+//that's because it's no longer considered undefined, and at the moment we're setting that property
+//this condition will work
 logWorldWideSpokenLanguages(WorlWideSpokenLanguages);
+var mangaAndComics = {
+    name: "Eichiro Oda",
+    age: 48,
+    publishedManga: 1
+};
+function bestMangaAndComics(_a) {
+    var name = _a.name, age = _a.age;
+    console.log("My favourite manga author is ".concat(name, ", He is now ").concat(age, " years old"));
+}
+bestMangaAndComics(mangaAndComics);

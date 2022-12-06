@@ -213,6 +213,32 @@ function logWorldWideSpokenLanguages(WorlWideSpokenLanguages: WorldNations) {
   console.log(
     `The most spoken language in the world is ${WorlWideSpokenLanguages.spokenLanguage} and it's spoken in ${WorlWideSpokenLanguages.nation}`
   );
+  if (typeof WorlWideSpokenLanguages.inhabitants === "number") {
+    console.log(WorlWideSpokenLanguages.inhabitants * 2);
+  }
 }
 
+//by adding this condition in our function, also if we still didnt' have our inhabitants props, we'll not receive an error
+//that's because it's no longer considered undefined, and at the moment we're setting that property
+//this condition will work
+
 logWorldWideSpokenLanguages(WorlWideSpokenLanguages);
+
+//destructuring a type in a function to use only certain properties of it
+type mangaAuthor = {
+  name: string;
+  age: number;
+  publishedManga: number;
+};
+const mangaAndComics: mangaAuthor = {
+  name: "Eichiro Oda",
+  age: 48,
+  publishedManga: 1,
+};
+function bestMangaAndComics({ name, age }: mangaAuthor) {
+  console.log(
+    `My favourite manga author is ${name}, He is now ${age} years old`
+  );
+}
+
+bestMangaAndComics(mangaAndComics);
