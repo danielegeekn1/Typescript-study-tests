@@ -181,3 +181,30 @@ mangaAndBooks.push(true);
 //we can push any kind of types we specified at the beginning
 
 console.log(mangaAndBooks);
+
+//explicit union types on simple variables
+let bestAnime: string | number; // in this case we do not use ()
+bestAnime = "Vagabond";
+bestAnime = 1997;
+
+//explicit types on object
+let ninjaOne: object;
+ninjaOne = { name: "Naruto", age: 14 };
+//ninjaOne = []; //that would work because an array is considered a kind of object
+
+let ninjaTwo: { name: string; age: number; beltColor: string };
+ninjaTwo = { name: "Yoshi", age: 20, beltColor: "black" }; // in this case it has to match all the value with their types as we set
+
+//optional types
+type WorldNations = {
+  nation: string;
+  spokenLanguage: string;
+  inhabitants?: number;
+};
+const WorlWideSpokenLanguages: WorldNations = {
+  nation: "Japan",
+  spokenLanguage: "Japanese",
+  //inhabitants: 1_000_000_000,
+};
+//as we mentioned previously it has to match all of the properties and their related set types
+//unless we do not set this to be optional with the property modifier
