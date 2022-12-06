@@ -30,15 +30,15 @@ inVoice2.amount = 400;
 //modify each of their values with dot notations
 console.log(inVoice1, inVoice2);
 //other class example
-class Country {
+class Country<LanguageType> {
   protected readonly name: string = ""; // this is what is required to set this property to be readonly, so this property my not be changed
   protected code: string = "";
-  private languages: string[] = [];
+  private languages: LanguageType[] = [];
   constructor(name: string, code: string) {
     this.name = name;
     this.code = code;
   }
-  addLanguage(language: string) {
+  addLanguage(language: LanguageType) {
     this.languages.push(language);
   }
   describeLanguages(): string {
@@ -47,12 +47,17 @@ class Country {
     )}`;
   }
 }
-const Nigeria = new Country("Nigeria", "NG");
+interface language {
+  name: string;
+  percentage: number;
+}
+const Nigeria = new Country<language>("Nigeria", "NG");
 
-Nigeria.addLanguage("Hausa");
-Nigeria.addLanguage("Igbo");
-Nigeria.addLanguage("Yoruba");
-Nigeria.addLanguage("English");
+// Nigeria.addLanguage("Hausa");
+// Nigeria.addLanguage("Igbo");
+// Nigeria.addLanguage("Yoruba");
+// Nigeria.addLanguage("English");
+Nigeria.addLanguage({ name: "Hindi", percentage: 50 });
 console.log(Nigeria);
 
 const description = Nigeria.describeLanguages();
@@ -65,6 +70,7 @@ console.log(italy);
 //since i specified it has the type of array of strings
 
 //In Typescript we must always pay attenction to match the set types properly
+/*
 class CountryWithCurrency extends Country {
   private currency: Currency;
   constructor(name: string, code: string, currency: Currency) {
@@ -107,3 +113,4 @@ console.log(colombiaDescription);
 const spain = new Country("Spain", "SP");
 spain.addLanguage("spanish");
 console.log(spain);
+ */
