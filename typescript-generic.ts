@@ -56,3 +56,15 @@ const currentObj2: currencyObject = {
 //then we could normally use that currency interface accordingly to how we set it
 
 // associating our explicit tag to a type, will make this option to be reusable and will let our code appear more readable as well
+
+//genric types with type aliases
+
+type currencySymbol<Type> = {
+  currencySymbol: Type;
+};
+type genericCurrencyString = currencySymbol<string>;
+type genericCurrencyObj = currencySymbol<{ name: string; code: string }>;
+const currencySymbolString: genericCurrencyString = { currencySymbol: "£" };
+const currencySymbolObj: genericCurrencyObj = {
+  currencySymbol: { name: "Indian Rupe", code: "INR" },
+};
