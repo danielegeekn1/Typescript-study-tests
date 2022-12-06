@@ -71,6 +71,9 @@ class CountryWithCurrency extends Country {
     super(name, code);
     this.currency = currency;
   }
+  describeCurrency() {
+    return `The currency of ${this.name} is ${this.currency.name} (${this.currency.symbol})`;
+  }
 }
 interface Currency {
   name: string;
@@ -89,3 +92,6 @@ Colombia.addLanguage("English");
 console.log(Colombia); //this'll be logged since we have all the properties of the class we extended already
 const colombiaLanguages = Colombia.describeLanguages();
 console.log(colombiaLanguages);
+
+const describeColombiaCurrency = Colombia.describeCurrency();
+console.log(describeColombiaCurrency);
