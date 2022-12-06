@@ -21,8 +21,9 @@ var bands = [
     },
 ];
 var brands = ["Apple, Samsung", "Asus"];
-//by default we could modify our array, since we pass only values of the type we set
-// in our case string types
-//if we do not want this to be modified we can use on our const brand a read only property modifier
-var population = ["China", 1000000000];
-console.log(population[0]);
+var population = [
+    ["China", 1000000000],
+    ["Narnia", 3000000000],
+];
+console.log(population[0]); // this'll return only China
+console.log(population);
