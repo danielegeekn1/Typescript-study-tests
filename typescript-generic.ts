@@ -17,3 +17,38 @@ let output3 = identity(true);
 ///generic type in arrow function
 const idCards = <Type>(value: Type): Type => value;
 //it works the same way, we need to put our type tag before our parameter
+
+//multiple generic types in function
+function multipleIdCards<Type1, Type2>(
+  value1: Type1,
+  value2: Type2
+): [value1: Type1, value2: Type2] {
+  return [value1, value2];
+}
+let output4 = multipleIdCards(true, "China");
+
+// in this case we passed to it generic  types that'll be read once passed as argument of our function
+//now from output 4 we can see the type typescript inferred and display to us are both a boolean value and a value with type of string
+
+//we could set also explicit  type with this syntax
+let output5 = multipleIdCards<boolean, string>(true, "Japan");
+// if we'd now try to change the type of that values we passed as argument we'll have an error
+
+interface Currency<Type> {
+  currency: Type;
+}
+type currencyString = Currency<string>;
+
+//in this case we passed our Currency interface with assigned to it an explicit type tag of string into a type alias
+//which we then passed to our currentObj1 obj
+const currentObj1: currencyString = { currency: "Bath" };
+const currentObj2: Currency<{ name: string; code: string }> = {
+  currency: {
+    name: "Bath",
+    code: "THB",
+  },
+};
+// In this case in order to modify the obj properties we need to set it to be generic
+// then in order to pass the interface with our obj to another variable we need to then specify in the generic tag type we pass
+//which type of value we want to return, in our case an obj with name prop with string type, and code property to have a string type as well
+//then we could normally use that currency interface accordingly to how we set it
