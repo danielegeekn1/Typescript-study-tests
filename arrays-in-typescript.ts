@@ -35,3 +35,6 @@ const brands: readonly string[] = ["Apple, Samsung", "Asus"];
 // in our case string types
 
 //if we do not want this to be modified we can use on our const brand a read only property modifier
+type countryPopulation = readonly [string, number];
+const population: countryPopulation = ["China", 1_000_000_000];
+console.log(population[0]); // this'll return only China
