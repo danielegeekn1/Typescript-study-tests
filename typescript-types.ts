@@ -172,4 +172,12 @@ mangaCharacter = "Rufy";
 //they're called explicit types since we set their types
 //we could avoid this and typescript would infer the type according to the value we passed to that specific variable
 
-//union types
+//explicit union types
+
+let mangaAndBooks: (string | number | boolean)[] = [];
+mangaAndBooks.push("Games of Thrones");
+mangaAndBooks.push(2.0);
+mangaAndBooks.push(true);
+//we can push any kind of types we specified at the beginning
+
+console.log(mangaAndBooks);
