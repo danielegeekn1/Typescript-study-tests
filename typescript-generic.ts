@@ -38,17 +38,21 @@ interface Currency<Type> {
   currency: Type;
 }
 type currencyString = Currency<string>;
-
+type currencyObject = Currency<{ name: string; code: string }>;
 //in this case we passed our Currency interface with assigned to it an explicit type tag of string into a type alias
 //which we then passed to our currentObj1 obj
+
 const currentObj1: currencyString = { currency: "Bath" };
-const currentObj2: Currency<{ name: string; code: string }> = {
+const currentObj2: currencyObject = {
   currency: {
     name: "Bath",
     code: "THB",
   },
 };
+
 // In this case in order to modify the obj properties we need to set it to be generic
 // then in order to pass the interface with our obj to another variable we need to then specify in the generic tag type we pass
 //which type of value we want to return, in our case an obj with name prop with string type, and code property to have a string type as well
 //then we could normally use that currency interface accordingly to how we set it
+
+// associating our explicit tag to a type, will make this option to be reusable and will let our code appear more readable as well
