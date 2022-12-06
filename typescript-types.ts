@@ -235,10 +235,29 @@ const mangaAndComics: mangaAuthor = {
   age: 48,
   publishedManga: 1,
 };
-function bestMangaAndComics({ name, age }: mangaAuthor) {
+function bestMangaAndComics({ name, age = 22 }: mangaAuthor) {
   console.log(
     `My favourite manga author is ${name}, He is now ${age} years old`
   );
 }
 
 bestMangaAndComics(mangaAndComics);
+
+//read only properties
+
+type animeInfo = {
+  title: string;
+  description: string;
+  readonly releaseYear: number;
+};
+const anime: animeInfo = {
+  title: "One Piece",
+  description: "Rufy wants to find One Piece treasure",
+  releaseYear: 1997,
+};
+
+//now we could change each single property of our anime constant, since we respect their set types of course
+anime.title = "Vagabond";
+
+//to avoid our property to be changed, then we could use read only modifier
+//now we could not change any more releaseYear property, because it's readonly
