@@ -31,9 +31,9 @@ inVoice2.amount = 400;
 console.log(inVoice1, inVoice2);
 //other class example
 class Country {
-  readonly name: string = ""; // this is what is required to set this property to be readonly, so this property my not be changed
-  code: string = "";
-  languages: string[] = [];
+  protected readonly name: string = ""; // this is what is required to set this property to be readonly, so this property my not be changed
+  protected code: string = "";
+  private languages: string[] = [];
   constructor(name: string, code: string) {
     this.name = name;
     this.code = code;
@@ -66,12 +66,12 @@ console.log(italy);
 
 //In Typescript we must always pay attenction to match the set types properly
 class CountryWithCurrency extends Country {
-  currency: Currency;
+  private currency: Currency;
   constructor(name: string, code: string, currency: Currency) {
     super(name, code);
     this.currency = currency;
   }
-  describeCurrency() {
+  private describeCurrency() {
     return `The currency of ${this.name} is ${this.currency.name} (${this.currency.symbol})`;
   }
   describe(): string {
@@ -99,7 +99,11 @@ console.log(Colombia); //this'll be logged since we have all the properties of t
 const colombiaLanguages = Colombia.describeLanguages();
 console.log(colombiaLanguages);
 
-const describeColombiaCurrency = Colombia.describeCurrency();
-console.log(describeColombiaCurrency);
+// const describeColombiaCurrency = Colombia.describeCurrency();
+// console.log(describeColombiaCurrency);
 const colombiaDescription = Colombia.describe();
 console.log(colombiaDescription);
+
+const spain = new Country("Spain", "SP");
+spain.addLanguage("spanish");
+console.log(spain);

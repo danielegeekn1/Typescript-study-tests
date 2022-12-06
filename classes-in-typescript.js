@@ -104,3 +104,6 @@ var describeColombiaCurrency = Colombia.describeCurrency();
 console.log(describeColombiaCurrency);
 var colombiaDescription = Colombia.describe();
 console.log(colombiaDescription);
+var spain = new Country("Spain", "SP");
+spain.addLanguage("spanish");
+console.log(spain);
