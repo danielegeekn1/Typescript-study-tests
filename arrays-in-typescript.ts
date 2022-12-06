@@ -42,3 +42,36 @@ const population: countryPopulation[] = [
 ];
 console.log(population[0]); // this'll return only China
 console.log(population);
+
+interface mangaInformation {
+  mangaTitle: string;
+  releaseYear: number;
+  author: string;
+}
+const mangaAndAnimeInfo: mangaInformation[] = [
+  {
+    mangaTitle: "One Piece",
+    releaseYear: 1997,
+    author: "Eichiro Oda",
+  },
+  {
+    mangaTitle: "Vagabond",
+    releaseYear: 1998,
+    author: "Takehiko Inoue",
+  },
+  {
+    mangaTitle: "Rouroni Kenshin",
+    releaseYear: 1994,
+    author: "Nobuhiro Watsuki",
+  },
+];
+//find method with array to find only the object which has the value of author property to be Eichiro Oda string
+const findAuthor = mangaAndAnimeInfo.find((author) => {
+  return author.author === "Eichiro Oda";
+});
+console.log(findAuthor.author);
+//filter method to find only the object with releaseYear over 1994
+const filterMethod = mangaAndAnimeInfo.filter((manga) => {
+  return manga.releaseYear > 1994;
+});
+console.log(filterMethod);
