@@ -31,3 +31,32 @@ function displayCountries({ name, population = 0 }: Country) {
 
 displayCountries(country);
 displayCountries(anotherCountry);
+
+//extending multiple interfaces
+interface NationsInfo {
+  readonly nation: string;
+  readonly spokenLanguage: string;
+  population?: number;
+}
+interface actualCurrency {
+  currency: {
+    name: string;
+  };
+}
+
+interface NationsWithCurrencyAndLanguages extends NationsInfo, actualCurrency {
+  languages: string;
+}
+//in this case we extended multiple interfaces, by simply writing the interfaces we wanted to extend separated by a comma
+const nationsInformations: NationsWithCurrencyAndLanguages = {
+  nation: "New Zealand",
+  spokenLanguage: "English",
+  languages: "Spanish",
+  population: 445_556_789,
+  currency: {
+    name: "New Zealand Dollar",
+  },
+};
+
+//once we passed as type of this constant, the interface which has all the proprerties of the interfaces it extended
+//we must as usual match all the properties and their relative types
