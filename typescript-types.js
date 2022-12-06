@@ -135,3 +135,23 @@ mangaAndBooks.push(2.0);
 mangaAndBooks.push(true);
 //we can push any kind of types we specified at the beginning
 console.log(mangaAndBooks);
+//explicit union types on simple variables
+var bestAnime; // in this case we do not use ()
+bestAnime = "Vagabond";
+bestAnime = 1997;
+//explicit types on object
+var ninjaOne;
+ninjaOne = { name: "Naruto", age: 14 };
+//ninjaOne = []; //that would work because an array is considered a kind of object
+var ninjaTwo;
+ninjaTwo = { name: "Yoshi", age: 20, beltColor: "black" }; // in this case it has to match all the value with their types as we set
+var WorlWideSpokenLanguages = {
+    nation: "Japan",
+    spokenLanguage: "Japanese"
+};
+//as we mentioned previously it has to match all of the properties and their related set types
+//unless we do not set this to be optional with the property modifier as we did above
+function logWorldWideSpokenLanguages(WorlWideSpokenLanguages) {
+    console.log("The most spoken language in the world is ".concat(WorlWideSpokenLanguages.spokenLanguage, " and it's spoken in ").concat(WorlWideSpokenLanguages.nation));
+}
+logWorldWideSpokenLanguages(WorlWideSpokenLanguages);

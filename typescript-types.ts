@@ -207,4 +207,12 @@ const WorlWideSpokenLanguages: WorldNations = {
   //inhabitants: 1_000_000_000,
 };
 //as we mentioned previously it has to match all of the properties and their related set types
-//unless we do not set this to be optional with the property modifier
+//unless we do not set this to be optional with the property modifier as we did above
+
+function logWorldWideSpokenLanguages(WorlWideSpokenLanguages: WorldNations) {
+  console.log(
+    `The most spoken language in the world is ${WorlWideSpokenLanguages.spokenLanguage} and it's spoken in ${WorlWideSpokenLanguages.nation}`
+  );
+}
+
+logWorldWideSpokenLanguages(WorlWideSpokenLanguages);
