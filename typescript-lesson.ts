@@ -139,3 +139,5 @@ function printCoord(pt: Point) {
 printCoord({ x: 100, y: 100 });
 
 // in this case we could use these variables we passed into our type alias as many time as want
+
+//non - null assertion operator
