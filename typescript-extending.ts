@@ -20,3 +20,14 @@ const country: CountryWithCurrencies = {
     name: "dollar",
   },
 };
+const anotherCountry: Country = {
+  name: "India",
+  code: "IN",
+};
+function displayCountries({ name, population = 0 }: Country) {
+  console.log(name.toUpperCase());
+  console.log(population * 10);
+}
+
+displayCountries(country);
+displayCountries(anotherCountry);
