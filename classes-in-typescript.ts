@@ -41,6 +41,11 @@ class Country {
   addLanguage(language: string) {
     this.languages.push(language);
   }
+  describeLanguages(): string {
+    return `The languages spoken in ${this.name} include ${this.languages.join(
+      ","
+    )}`;
+  }
 }
 const Nigeria = new Country("Nigeria", "NG");
 
@@ -49,3 +54,38 @@ Nigeria.addLanguage("Igbo");
 Nigeria.addLanguage("Yoruba");
 Nigeria.addLanguage("English");
 console.log(Nigeria);
+
+const description = Nigeria.describeLanguages();
+console.log(description);
+
+const italy = new Country("Italy", "IT");
+italy.addLanguage("Italian");
+console.log(italy);
+// if i wanted to add a number type to our language class property, i'd have an error
+//since i specified it has the type of array of strings
+
+//In Typescript we must always pay attenction to match the set types properly
+class CountryWithCurrency extends Country {
+  currency: Currency;
+  constructor(name: string, code: string, currency: Currency) {
+    super(name, code);
+    this.currency = currency;
+  }
+}
+interface Currency {
+  name: string;
+  code: string;
+  symbol: string;
+}
+const colombiaCurrency: Currency = {
+  name: "Colombia",
+  code: "COD",
+  symbol: "€",
+};
+
+const Colombia = new CountryWithCurrency("Colombia", "CO", colombiaCurrency);
+Colombia.addLanguage("Spanish");
+Colombia.addLanguage("English");
+console.log(Colombia); //this'll be logged since we have all the properties of the class we extended already
+const colombiaLanguages = Colombia.describeLanguages();
+console.log(colombiaLanguages);
