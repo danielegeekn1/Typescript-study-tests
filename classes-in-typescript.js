@@ -78,6 +78,15 @@ var CountryWithCurrency = /** @class */ (function (_super) {
         _this.currency = currency;
         return _this;
     }
+    CountryWithCurrency.prototype.describeCurrency = function () {
+        return "The currency of ".concat(this.name, " is ").concat(this.currency.name, " (").concat(this.currency.symbol, ")");
+    };
+    CountryWithCurrency.prototype.describe = function () {
+        var description = "Country description:".concat(this.name, "\n");
+        description += this.describeLanguages() + "\n"; //invoking a parent class method
+        description += this.describeCurrency(); //invokin the method of our class we're currently in
+        return description;
+    };
     return CountryWithCurrency;
 }(Country));
 var colombiaCurrency = {
@@ -91,3 +100,7 @@ Colombia.addLanguage("English");
 console.log(Colombia); //this'll be logged since we have all the properties of the class we extended already
 var colombiaLanguages = Colombia.describeLanguages();
 console.log(colombiaLanguages);
+var describeColombiaCurrency = Colombia.describeCurrency();
+console.log(describeColombiaCurrency);
+var colombiaDescription = Colombia.describe();
+console.log(colombiaDescription);

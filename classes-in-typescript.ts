@@ -74,6 +74,12 @@ class CountryWithCurrency extends Country {
   describeCurrency() {
     return `The currency of ${this.name} is ${this.currency.name} (${this.currency.symbol})`;
   }
+  describe(): string {
+    let description = `Country description:${this.name}\n`;
+    description += this.describeLanguages() + "\n"; //invoking a parent class method
+    description += this.describeCurrency(); //invokin the method of our class we're currently in
+    return description;
+  }
 }
 interface Currency {
   name: string;
@@ -95,3 +101,5 @@ console.log(colombiaLanguages);
 
 const describeColombiaCurrency = Colombia.describeCurrency();
 console.log(describeColombiaCurrency);
+const colombiaDescription = Colombia.describe();
+console.log(colombiaDescription);
