@@ -52,6 +52,18 @@ mixed.push(true);
 //change our types values in our mixed string
 mixed[0] = 3; // the first string type value ken is now overwitten and changed to 3
 
+//array explicit types
+let mangaTitles: string[] = [];
+mangaTitles = ["One Piece", "Naruto", "Demon Slayer"];
+
+//we could not in this case pass some number types value into that
+
+//PS - IMPORTANT - If we now would push something in this mangaTitles string we would have a warning
+//telling us we cannot read property push of undefined, that's because this is initially undefined
+//we're only telling that later on it
+
+mangaTitles.push("Berserk"); //now we could have done this since we initialize our variable with an empty array
+
 //objects
 let samurai = {
   name: "Goro",
@@ -147,3 +159,17 @@ function showComics(ComicsReleases: comics) {
   console.log(ComicsReleases.releaseYear);
 }
 showComics(ComicsReleases);
+
+//explicit types
+let mangaCharacter: string;
+let mangaCharacterAge: number;
+let isGoodOrBad: boolean;
+
+mangaCharacterAge = 40;
+isGoodOrBad = true;
+mangaCharacter = "Rufy";
+
+//they're called explicit types since we set their types
+//we could avoid this and typescript would infer the type according to the value we passed to that specific variable
+
+//union types
