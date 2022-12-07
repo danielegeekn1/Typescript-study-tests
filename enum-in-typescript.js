@@ -1,12 +1,12 @@
 var Continent;
 (function (Continent) {
-    Continent[Continent["Asia"] = 0] = "Asia";
-    Continent[Continent["Africa"] = 1] = "Africa";
-    Continent[Continent["NorthAmerica"] = 2] = "NorthAmerica";
-    Continent[Continent["SouthAmerica"] = 3] = "SouthAmerica";
-    Continent[Continent["Europe"] = 4] = "Europe";
-    Continent[Continent["Antartica"] = 5] = "Antartica";
-    Continent[Continent["Oceania"] = 6] = "Oceania";
+    Continent["Asia"] = "Asia";
+    Continent["Africa"] = "Africa";
+    Continent["NorthAmerica"] = "North America";
+    Continent["SouthAmerica"] = "South America";
+    Continent["Europe"] = "Europe";
+    Continent["Antartica"] = "Antartica";
+    Continent["Oceania"] = "Oceania";
 })(Continent || (Continent = {}));
 var countries = [
     {
@@ -31,3 +31,6 @@ var countries = [
     },
 ];
 console.log(countries);
+//the continent values will be displayed as numbers
+//because by default enum properties are numbered
+//another example

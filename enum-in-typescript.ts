@@ -1,11 +1,11 @@
 enum Continent {
-  Asia = 1,
-  Africa,
-  NorthAmerica,
-  SouthAmerica,
-  Europe,
-  Antartica,
-  Oceania,
+  Asia = "Asia",
+  Africa = "Africa",
+  NorthAmerica = "North America",
+  SouthAmerica = "South America",
+  Europe = "Europe",
+  Antartica = "Antartica",
+  Oceania = "Oceania",
 }
 interface Country {
   name: string;
