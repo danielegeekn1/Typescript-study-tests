@@ -16,6 +16,8 @@ function outputLanguages(languages: string | string[]) {
   if (Array.isArray(languages)) {
     console.log(`Languages: ${languages.join(", ")}`); //that'll be logged on the console only if languages prop we'll pass
     //as argument is an array, wether it's not it'll not display but we'll not get an error
+  } else {
+    console.log(`Languages: ${languages}`); // in this case we'll cover the case it's a string type passed since we only set two types
   }
 }
 outputLanguages(["Thai food", "Japanese food", "Italian food"]);
